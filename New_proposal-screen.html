@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORG Trade New Proposal screen</title>
+    <link rel="stylesheet" href="output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script language="JavaScript" type="text/javascript" src="js/lib/custom-file.js" async></script>
+    <script language="JavaScript" type="text/javascript" src="js/lib/tw-elements/dist/js/tw-elements.umd.min.js"async></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="js/lib/flowbite/dist/flowbite.css">
+    <script src="js/lib/flowbite/dist/datepicker.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="input.css">
+</head>
+<body class="bg-[#FFFFFF]">
+    <div class="bg-white py-6 px-[56px] w-full flex justify-start items-center shadow-s1 sticky top-0 left-0 z-[99]">
+        <img src="images/QRG0logo.svg" alt="icon">
+    </div>
+    <div class="py-[69px] px-[56px]">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center">
+                <input type="text" class="font-medium text-lg text-black py-2.5 rounded-lg px-5 bg-white border border-[#3437414D] placeholder:text-black w-[281px] outline-0" placeholder="Account Number">
+                <input type="text" class="font-medium text-lg text-[#2382C5] py-2.5 rounded-lg px-5 bg-white border border-[#3437414D] placeholder:text-[#2382C5] w-[222px] outline-0 ml-5" placeholder="Advisor Name">
+            </div>
+            <div class="">
+                <input type="text" class="font-medium text-lg text-[#18851E] py-2.5 rounded-lg px-5 bg-white border border-[#3437414D] placeholder:text-[#18851E] w-[222px] outline-0" placeholder="Client Name">
+            </div>
+        </div>
+        <div class="mt-[35px] flex justify-between items-center">
+            <div class="relative" data-te-dropdown-ref>
+                <button
+                    class="flex items-center whitespace-nowrap bg-white border border-[#3437414D] px-5 py-3 rounded-lg text-[#2382C5] text-[26px] leading-[35px] font-normal transition duration-150 ease-in-out"
+                    type="button"
+                    id="dropdownMenuButton1"
+                    data-te-dropdown-toggle-ref
+                    aria-expanded="false"
+                    data-te-ripple-init
+                    data-te-ripple-color="light">
+                    Select Proposal
+                    <span class="ml-2">
+                    <img src="images/down-arrow-blue.svg" alt="icon" class="w-7 h-7">
+                    </span>
+                </button>
+                <ul
+                    class="absolute z-[1000] w-full float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-clip-padding text-left text-base shadow-lg bg-[#FFFFFF] [&[data-te-dropdown-show]]:block"
+                    aria-labelledby="dropdownMenuButton1"
+                    data-te-dropdown-menu-ref>
+                    <li>
+                    <a
+                        class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal disabled:pointer-events-none disabled:bg-transparent text-black"
+                        href="#"
+                        data-te-dropdown-item-ref
+                        >Action</a
+                    >
+                    </li>
+                    <li>
+                    <a
+                        class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal disabled:pointer-events-none disabled:bg-transparent text-black"
+                        href="#"
+                        data-te-dropdown-item-ref
+                        >Another action</a
+                    >
+                    </li>
+                    <li>
+                    <a
+                        class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal disabled:pointer-events-none disabled:bg-transparent text-black"
+                        href="#"
+                        data-te-dropdown-item-ref
+                        >Something else here</a
+                    >
+                    </li>
+                </ul>
+            </div>
+            <div class="">
+                <button type="button" class="border border-[#18851E] w-[222px] rounded-[7px] py-3 font-medium text-[13px] leading-[18px] text-[#FFFFFF] bg-[#18851E] cursor-pointer"
+                data-te-toggle="modal"
+                data-te-target="#modal_New_proposal" data-te-dropdown-item-reff>
+                    New Proposal
+                </button>
+            </div>
+        </div>
+        <div class="mt-[35px] py-9 px-6">
+            <div class="flex w-full">
+                <input type="text" class="font-normal text-lg text-black py-3 px-10 rounded-lg bg-white border border-[#3437414D] placeholder:text-[#2382C5] w-[60%] outline-0" placeholder="xyz">
+                <input type="text" class="font-normal text-lg text-black py-3 px-10 rounded-lg bg-white border border-[#3437414D] placeholder:text-[#2382C5] w-[40%] outline-0 ml-6" placeholder="xyz">
+            </div>
+            <textarea class="mt-10 w-full h-[210px] overflow-auto sidebar resize-none outline-0 text-base font-nomal text-[#58595B] border border-[#2382C599] rounded-lg pt-[33px] px-6 pb-[61px] placeholder:text-[#58595B] placeholder:text-normal placeholder:text-base" placeholder="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam "></textarea>
+        </div>
+        <div class="mt-8 ">
+            <table aria-label="Outside Table" class="w-full table-auto relative h-full border border-[#D2CECE]">
+                <thead class="sticky top-0 left-0 z-[1] border border-[#D2CECE]">
+                    <tr class="sticky top-[-1] left-0 h-[38px] w-full bg-[#F5F5F5] rounded-tl-[10px] rounded-tr-[10px] border-r border-l border-t border-[#D2CECE]">
+                        <th class="px-6 py-[18px] min-w-[60px] border-t border-b border-[#D2CECE]">
+                            <span class="flex items-center font-medium text-xs text-[#0F1419] justify-center">Param Name
+                            </span>
+                        </th>
+                        <th class="px-6 py-[18px] min-w-[100px] border-t border-b border-[#D2CECE]">
+                            <span class="flex items-center font-medium text-xs text-[#0F1419] justify-center">Master
+                            </span>
+                        </th>
+                        <th class="px-6 py-[18px] min-w-[100px] border-t border-b border-[#D2CECE]">
+                            <span class="flex items-center font-medium text-xs text-[#0F1419] justify-center">Regular 1
+                            </span>
+                        </th>
+                        <th class="px-6 py-[18px] min-w-[150px] border-t border-b border-[#D2CECE]">
+                            <span class="flex items-center font-medium text-xs text-[#0F1419] justify-center">Regular  2
+                            </span>
+                        </th>
+                        <th class="px-6 py-[18px] min-w-[150px] border-t border-b border-[#D2CECE]">
+                            <span class="flex items-center font-medium text-xs text-[#0F1419] justify-center">Regular 3
+                            </span>
+                        </th>
+                        <th class="px-6 py-[18px] min-w-[150px] border-t border-b border-[#D2CECE]">
+                            <span class="flex items-center justify-center font-medium text-xs text-[#0F1419]">Regular  4
+                            </span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="bg-[#FFFFFF] h-[50px] border-r border-l border-[#D2CECE]">
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">Param 1</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                    </tr>
+                    <tr class="border border-[#2382C54D] bg-[#2382C51A] h-[50px] border-r border-l ">
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">Param 1</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                    </tr>
+                    <tr class="bg-[#FFFFFF] h-[50px] border-r border-l border-[#D2CECE]">
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">Param 1</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                    </tr>
+                    <tr class="border border-[#2382C54D] bg-[#2382C51A] h-[50px] border-r border-l ">
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">Param 1</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                    </tr>
+                    <tr class="bg-[#FFFFFF] h-[50px] border-r border-l border-[#D2CECE]">
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">Param 1</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                    </tr>
+                    <tr class="border border-[#2382C54D] bg-[#2382C51A] h-[50px] border-r border-l ">
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">Param 1</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                    </tr>
+                    <tr class="bg-[#FFFFFF] h-[50px] border-r border-l border-[#D2CECE]">
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">Param 1</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                    </tr>
+                    <tr class="border border-[#2382C54D] bg-[#2382C51A] h-[50px] border-r border-l ">
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">Param 1</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                    </tr>
+                    <tr class="bg-[#FFFFFF] h-[50px] border-r border-l border-b border-[#D2CECE]"></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+     <!-- Modal for New proposal modal -->
+     <div data-te-modal-init  class="fixed left-0 top-0 z-[1055] hidden w-full h-full overflow-y-auto overflow-x-hidden outline-none" id="modal_New_proposal" tabindex="-1" aria-labelledby="modal_New_proposal" aria-modal="true" role="dialog">
+        <div data-te-modal-dialog-ref class="pointer-events-none relative flex min-h-[calc(100%-1rem)] w-auto translate-y-[-50px] items-center opacity-0 transition-all duration-300 ease-in-out min-w-[1000px] mx-auto max-w-[1000px]">
+            <div class="pointer-events-auto flex w-full flex-col border-none bg-white bg-clip-padding text-current outline-none dark:bg-neutral-600 min-w-[1000px] mx-auto max-w-[1000px] relative shadow-s2 rounded-[22px] justify-center" style="background-color: #fff;">
+                <div class="flex flex-shrink-0 items-center justify-between rounded-t-md border-b border-[#D9D9D9] py-5 px-[54px] ">
+                    <p class="font-medium text-[25px] text-[#343741]">New Proposal</p>
+                    <button type="button" class=" absolute right-[54px] top-7 box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+                        data-te-modal-dismiss aria-label="Close">
+                        <img loading="lazy" decoding="async" src="images/close.svg" alt="icon" class="w-5">
+                    </button>
+                </div>
+                <div class="py-6 px-[59px]">
+                    <div class="relative" data-te-dropdown-ref>
+                        <button
+                            class="flex items-center whitespace-nowrap bg-white border border-[#3437414D] px-2.5 py-1 rounded-lg text-[#2382C5] text-[20px] leading-[35px] font-normal transition duration-150 ease-in-out"
+                            type="button"
+                            id="dropdownMenuButton1"
+                            data-te-dropdown-toggle-ref
+                            aria-expanded="false"
+                            data-te-ripple-init
+                            data-te-ripple-color="light">
+                            Copy from proposal set
+                            <span class="ml-2">
+                            <img src="images/down-arrow-blue.svg" alt="icon" class="w-5 h-5">
+                            </span>
+                        </button>
+                        <ul
+                            class="absolute z-[1000] w-full float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-clip-padding text-left text-base shadow-lg bg-[#FFFFFF] [&[data-te-dropdown-show]]:block"
+                            aria-labelledby="dropdownMenuButton1"
+                            data-te-dropdown-menu-ref>
+                            <li>
+                            <a
+                                class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal disabled:pointer-events-none disabled:bg-transparent text-black"
+                                href="#"
+                                data-te-dropdown-item-ref
+                                >Action</a
+                            >
+                            </li>
+                            <li>
+                            <a
+                                class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal disabled:pointer-events-none disabled:bg-transparent text-black"
+                                href="#"
+                                data-te-dropdown-item-ref
+                                >Another action</a
+                            >
+                            </li>
+                            <li>
+                            <a
+                                class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal disabled:pointer-events-none disabled:bg-transparent text-black"
+                                href="#"
+                                data-te-dropdown-item-ref
+                                >Something else here</a
+                            >
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="flex justify-between items-center mt-6">
+                        <div class="flex items-center">
+                            <button type="button" class="border border-[#156719] w-[222px] rounded-[7px] py-3 font-medium text-[13px] leading-[18px] text-[#FFFFFF] bg-[#18851E] cursor-pointer">
+                                Create
+                            </button>
+                            <button type="button" class="ml-6 font-medium text-lg text-black w-[103px] py-2 rounded-lg border border-[#3437414D]">Reset</button>
+                         </div>
+                        <div class="flex items-center">
+                            <button type="button" class="border border-[#18851E] w-[107px] rounded-[7px] py-3 font-medium text-[13px] leading-[18px] text-[#18851E] bg-[#FFFFFF] cursor-pointer">
+                                Add Sleeve +
+                            </button>
+                            <button type="button" class="ml-5 font-medium text-[13px] leading-[18px] text-[#DC0000] w-fit py-3 px-5 rounded-lg border border-[#DC0000]">Delete Sleeve -</button>
+                        </div>
+                    </div>
+                    <div class="mt-8 ">
+                        <table aria-label="Outside Table" class="w-full table-auto relative h-full border border-[#D2CECE]">
+                            <thead class="sticky top-0 left-0 z-[1] border border-[#D2CECE]">
+                                <tr class="sticky top-[-1] left-0 h-[38px] w-full bg-[#F5F5F5] rounded-tl-[10px] rounded-tr-[10px] border-r border-l border-t border-[#D2CECE]">
+                                    <th class="px-6 py-[18px] min-w-[60px] border-t border-b border-[#D2CECE]">
+                                        <span class="flex items-center font-medium text-xs text-[#0F1419] justify-center">Param Name
+                                        </span>
+                                    </th>
+                                    <th class="px-6 py-[18px] min-w-[100px] border-t border-b border-[#D2CECE]">
+                                        <span class="flex items-center font-medium text-xs text-[#0F1419] justify-center">Master
+                                        </span>
+                                    </th>
+                                    <th class="px-6 py-[18px] min-w-[100px] border-t border-b border-[#D2CECE]">
+                                        <span class="flex items-center font-medium text-xs text-[#0F1419] justify-center">Regular 1
+                                        </span>
+                                    </th>
+                                    <th class="px-6 py-[18px] min-w-[150px] border-t border-b border-[#D2CECE]">
+                                        <span class="flex items-center font-medium text-xs text-[#0F1419] justify-center">Regular  2
+                                        </span>
+                                    </th>
+                                    <th class="px-6 py-[18px] min-w-[150px] border-t border-b border-[#D2CECE]">
+                                        <span class="flex items-center font-medium text-xs text-[#0F1419] justify-center">Regular 3
+                                        </span>
+                                    </th>
+                                    <th class="px-6 py-[18px] min-w-[150px] border-t border-b border-[#D2CECE]">
+                                        <span class="flex items-center justify-center font-medium text-xs text-[#0F1419]">Regular  4
+                                        </span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-[#FFFFFF] h-[50px] border-r border-l border-[#D2CECE]">
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center">Param 1</td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                </tr>
+                                <tr class="border border-[#2382C54D] bg-[#2382C51A] h-[50px] border-r border-l ">
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center">Param 1</td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                </tr>
+                                <tr class="bg-[#FFFFFF] h-[50px] border-r border-l border-[#D2CECE]">
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center">Param 1</td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                </tr>
+                                <tr class="border border-[#2382C54D] bg-[#2382C51A] h-[50px] border-r border-l ">
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center">Param 1</td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                </tr>
+                                <tr class="bg-[#FFFFFF] h-[50px] border-r border-l border-[#D2CECE]">
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center">Param 1</td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                </tr>
+                                <tr class="border border-[#2382C54D] bg-[#2382C51A] h-[50px] border-r border-l ">
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center">Param 1</td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                </tr>
+                                <tr class="bg-[#FFFFFF] h-[50px] border-r border-l border-[#D2CECE]">
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center">Param 1</td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                </tr>
+                                <tr class="border border-[#2382C54D] bg-[#2382C51A] h-[50px] border-r border-l ">
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center">Param 1</td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                    <td class="font-mediun text-[13px] text-[#6B6E71] text-center"></td>
+                                </tr>
+                                <tr class="bg-[#FFFFFF] h-[50px] border-r border-l border-b border-[#D2CECE]"></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

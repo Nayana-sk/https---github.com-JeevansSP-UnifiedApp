@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verified Trades</title>
+    <link rel="stylesheet" href="output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" /> -->
+    <style>
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+        .container{
+            max-width: 1280px;
+            margin: auto;
+        }
+body {
+    font-family: 'Font1', Rubik;
+  }
+  /* arabic */
+  @font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url(/public/Fonts/Rubik/static/Rubik-Light.ttf)
+  }
+  @font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/public/Fonts/Rubik/static/Rubik-Regular.ttf)
+  }
+ 
+  @font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(/public/Fonts/Rubik/static/Rubik-Medium.ttf)  
+}
+  @font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(/public/Fonts/Rubik/static/Rubik-SemiBold.ttf)  
+}
+  @font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(/public/Fonts/Rubik/static/Rubik-Bold.ttf) 
+ }
+  @font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url(/public/Fonts/Rubik/static/Rubik-ExtraBold.ttf)
+  }
+  
+  /* checkbox */
+  .custom-checkbox4 input{
+    opacity: 0;
+}
+.custom-checkbox4 input[type="checkbox"]:checked ~ label::before {
+    color: #191919;
+    background-color: #107CC2;
+    border-color: #107CC2;
+    border-radius: 4px;
+}
+.custom-checkbox4 label::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 0;
+    margin: 0;
+    height: 21px;
+    width: 21px;
+    transition: transform 0.28s ease;
+    border: 1px solid #9B9B9B;
+    border-radius: 4px;
+    transform: translateY(-50%);
+}
+.custom-checkbox4 input[type="checkbox"]:checked ~ label::after {
+    transform: rotate(-45deg) scale(1);
+    background-color: transparent;
+    border-color: white;
+}
+.custom-checkbox4 label::after {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 7px;
+    border-bottom: 2px solid #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+    transform: rotate(-45deg) scale(0);
+    transition: transform ease 0.25s;
+    will-change: transform;
+    position: absolute;
+    top: 0px;
+    left: 4.5px;
+}
+ /* scrollbar */
+ .scrollbar-menu1::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+.scrollbar-menu1::-webkit-scrollbar:vertical{
+  width: 5px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px !important;
+}
+.scrollbar-menu1::-webkit-scrollbar:horizontal {
+  height: 8px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px !important;
+}
+.scrollbar-menu1::-webkit-scrollbar-thumb {
+  background-color: #DAD7D9;
+  border: 1px solid #DAD7D9;
+  border-radius: 22px;
+  height: 5px;
+}
+.data-\[te-nav-active\]\:text-primary-700[data-te-nav-active]{
+  border-color:#107CC2 ;
+  background-color: #8ae3fc66 !important;
+  color: #107CC2 !important;
+}
+
+.data-\[te-nav-active\]\:text-primary-700[data-te-nav-active] .trade1{
+  opacity: 0;
+  columns: red;
+}
+.data-\[te-nav-active\]\:text-primary-700[data-te-nav-active] .trade2{
+  opacity: 1;
+}
+.data-\[te-nav-active\]\:text-primary-700[data-te-nav-active] .trade3{
+  opacity: 0;
+}
+.data-\[te-nav-active\]\:text-primary-700[data-te-nav-active] .trade4{
+  opacity: 1;
+}
+.data-\[te-nav-active\]\:text-primary-700[data-te-nav-active] .trade5{
+  opacity: 0;
+}
+.data-\[te-nav-active\]\:text-primary-700[data-te-nav-active] .trade6{
+  opacity: 1;
+}
+.dark\:bg-neutral-700 {
+    background-color: #fff !important;
+}
+/* .dark\:text-white{
+    color: #000 !important;
+} */
+.dark:data-[te-nav-active]{
+    color: #107CC2;
+}
+
+    </style>
+</head>
+
+<body class="bg-[#FFFFFF]">
+    <div class="bg-white py-6 w-full flex justify-center items-center shadow-s1 sticky top-0 left-0">
+        <img src="images/QRG0logo.svg" alt="icon">
+    </div>
+    <div class="flex w-full">
+        <div class="min-w-[20%] max-w-[20%] border-r border-[#c8bfbf] fixed py-7 px-4" style="height: -webkit-fill-available;">
+            <div class="flex flex-col justify-between h-full">
+                <div>
+                    <p class="font-semibold text-sm text-[#9d9999]">Dashboards</p>
+                    <div class="relative">
+                        <ul class="mr-4 flex list-none flex-col flex-wrap pl-0" role="tablist" data-te-nav-ref>
+                            <li role="presentation" class="flex-grow text-center">
+                                <a href="#pills-home03"
+                                    class="relative flex items-center my-2 trades active border-l-[10px] border-transparent block rounded bg-neutral-100 px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 data-[te-nav-active]:!bg-primary-100 data-[te-nav-active]:text-primary-700 dark:bg-neutral-700 dark:text-white dark:data-[te-nav-active]:text-primary-700"
+                                    id="pills-home-tab03" data-te-toggle="pill" data-te-target="#pills-home03"
+                                    data-te-nav-active role="tab" aria-controls="pills-home03" aria-selected="true">
+                                    <span class="relative"> 
+                                        <img src="images/ChartPieSlice-inactive.svg" alt="icon" class="mr-1 trade1 opacity-[1] absolute left-[-4px] bottom-[-2px]">
+                                        <img src="images/ChartPieSlice.svg" alt="icon" class="mr-1 trade2 opacity-[0]">
+                                    </span><span class="text-[#000000] vr-trade1">Verified Trades</span>
+                                </a>
+                            </li>
+                            <li role="profile" class="flex-grow text-center">
+                                <a href="#pills-profile03"
+                                    class="flex items-center my-2 border-l-[10px] trades border-transparent relative block rounded bg-neutral-100 px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 data-[te-nav-active]:!bg-primary-100 data-[te-nav-active]:text-primary-700 dark:bg-neutral-700 dark:text-white dark:data-[te-nav-active]:text-primary-700"
+                                    id="pills-profile-tab03" data-te-toggle="pill" data-te-target="#pills-profile03" role="tab"
+                                    aria-controls="pills-profile03" aria-selected="false">
+                                    <span class="relative"> 
+                                        <img src="images/ShoppingBagOpen.svg" alt="icon" class="mr-1 trade3 opacity-[1px] absolute left-[-4px] bottom-[-2px]">
+                                        <img src="images/ChartPieSlice.svg" alt="icon" class="mr-1 trade4 opacity-0">
+                                    </span>
+                                    <span class="vr-trade4 text-[#000000] opacity-1">Pending Actions</span>
+                                </a>
+                            </li>
+                            <li role="contact" class="flex-grow text-center">
+                                <a href="#pills-contact03"
+                                    class="flex items-center my-2 border-l-[10px] trades border-transparent relative block rounded bg-neutral-100 px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 data-[te-nav-active]:!bg-primary-100 data-[te-nav-active]:text-primary-700 dark:bg-neutral-700 dark:text-white dark:data-[te-nav-active]:text-primary-700"
+                                    id="pills-contact-tab03" data-te-toggle="pill" data-te-target="#pills-contact03" role="tab"
+                                    aria-controls="pills-contact03" aria-selected="false">
+                                    <span class="relative"> 
+                                        <img src="images/ShoppingBagOpen.svg" alt="icon" class="mr-1 trade5 opacity-[1] absolute left-[-4px] bottom-[-2px]">
+                                        <img src="images/ChartPieSlice.svg" alt="icon" class="mr-1 trade6 opacity-[0]"></span>
+                                    <span class="vr-trade6 text-[#000000] opacity-1">Refuted trades</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex items-center px-6">
+                    <img src="images/bywind.svg" alt="profile">
+                    <p class="font-normal text-sm text-[#1C1C1C] ml-2 pt-2">ByeWind</p>
+                </div>
+            </div>
+        </div>
+        <div class="ml-[20%] w-[80%] h-full">
+            <!--Pills content-->
+            <div class="pt-5 px-5">
+                <div class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
+                    id="pills-home03" role="tabpanel" aria-labelledby="pills-home-tab03" data-te-tab-active>
+                    <div class="w-full bg-[#F7F9FB] rounded-[16px] py-4 px-6 h-customh2">
+                        <div class="flex justify-center items-center">
+                            <img src="images/solar_diploma-verified-bold.svg" alt="icon">
+                            <p class="font-semibold text-[22px] leading-[38px] text-[#2382C5] ml-2">VERIFIED TRADES</p>
+                        </div>
+                        <div class="px-3 overflow-auto h-customh1 scrollbar-menu1">
+                            <div class="mt-6 border border-[#2382C5] rounded-[16px] py-4 px-5">
+                                <div class="flex justify-between items-center border-b border-[#2382C5] pb-3 bg-white">
+                                    <div class="flex items-center">
+                                        <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#18851E]">
+                                            Run ID : 123-XX-Y
+                                        </button>
+                                    </div>
+                                    <!-- <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#343741]">
+                                        Account : QRG-Test123
+                                    </button> -->
+                                </div>
+                                <p class="mt-4 font-normal text-base text-[58595B]">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam </p>
+                            </div>
+                            <div class="mt-6 border border-[#2382C5] rounded-[16px] py-4 px-5">
+                                <div class="flex justify-between items-center border-b border-[#2382C5] pb-3 bg-white">
+                                    <div class="flex items-center">
+                                        <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#18851E]">
+                                            Run ID : 123-XX-Y
+                                        </button>
+                                    </div>
+                                    <!-- <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#343741]">
+                                        Account : QRG-Test123
+                                    </button> -->
+                                </div>
+                                <p class="mt-4 font-normal text-base text-[58595B]">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam </p>
+                            </div>
+                            <div class="mt-6 border border-[#2382C5] rounded-[16px] py-4 px-5">
+                                <div class="flex justify-between items-center border-b border-[#2382C5] pb-3 bg-white">
+                                    <div class="flex items-center">
+                                        <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#18851E]">
+                                            Run ID : 123-XX-Y
+                                        </button>
+                                    </div>
+                                    <!-- <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#343741]">
+                                        Account : QRG-Test123
+                                    </button> -->
+                                </div>
+                                <p class="mt-4 font-normal text-base text-[58595B]">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam </p>
+                            </div>
+                            <div class="mt-6 border border-[#2382C5] rounded-[16px] py-4 px-5">
+                                <div class="flex justify-between items-center border-b border-[#2382C5] pb-3 bg-white">
+                                    <div class="flex items-center">
+                                        <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#18851E]">
+                                            Run ID : 123-XX-Y
+                                        </button>
+                                    </div>
+                                    <!-- <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#343741]">
+                                        Account : QRG-Test123
+                                    </button> -->
+                                </div>
+                                <p class="mt-4 font-normal text-base text-[58595B]">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam </p>
+                            </div>
+                            <div class="mt-6 border border-[#2382C5] rounded-[16px] py-4 px-5">
+                                <div class="flex justify-between items-center border-b border-[#2382C5] pb-3 bg-white">
+                                    <div class="flex items-center">
+                                        <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#18851E]">
+                                            Run ID : 123-XX-Y
+                                        </button>
+                                    </div>
+                                    <!-- <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#343741]">
+                                        Account : QRG-Test123
+                                    </button> -->
+                                </div>
+                                <p class="mt-4 font-normal text-base text-[58595B]">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center py-3 sticky bottom-0 z-[99] bg-white">
+                        <div class=" flex items-center border border-[#C8CBDA] bg-[#F8F9FF] rounded-lg p-2">
+                            <a href="#" class="mr-5 w-8 h-8 rounded flex justify-center bg-[#919EAB]">
+                                <img loading="lazy" decoding="async" src="images/open-bracket.svg" alt="icon">
+                            </a>
+                            <div class="">
+                                <a href="#"
+                                    class="text-sm font-normal text-[#107CC2] border border-[#2382C5] px-2 rounded-[5px] w-8 h-8 inline-flex justify-center items-center">1</a>
+                                <a href="#"
+                                    class="text-sm font-normal text-[#212B36] ml-2 px-2 border border-transparent rounded-[5px] w-8 h-8 inline-flex justify-center items-center hover:bg-[#F2F2F3]">2</a>
+                                <a href="#"
+                                    class="text-sm font-normal text-[#212B36] ml-2 px-2 border border-transparent rounded-[5px] w-8 h-8 inline-flex justify-center items-center hover:bg-[#F2F2F3]">3</a>
+                                <a href="#"
+                                    class="text-sm font-normal text-[#212B36] ml-2 px-2 border border-transparent rounded-[5px] w-8 h-8 inline-flex justify-center items-center hover:bg-[#F2F2F3]">...</a>
+                                <a href="#"
+                                    class="text-sm font-normal text-[#212B36] ml-2 px-2 border border-transparent rounded-[5px] w-8 h-8 inline-flex justify-center items-center hover:bg-[#F2F2F3]">9</a>
+                                <a href="#"
+                                    class="text-sm font-normal text-[#212B36] ml-2 px-2 border border-transparent rounded-[5px] w-8 h-8 inline-flex justify-center items-center hover:bg-[#F2F2F3]">10</a>
+                            </div>
+                            <a href="#" class=" ml-5 rounded border border-[#919EAB] w-8 h-8">
+                                <img loading="lazy" decoding="async" src="images/closed-bracket.svg" alt="icon" class="w-8 h-8"/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
+                    id="pills-profile03" role="tabpanel" aria-labelledby="pills-profile-tab03">
+                    <div class="w-full bg-[#F7F9FB] rounded-[16px] py-4 px-6 h-customh2">
+                        <div class="flex justify-center items-center">
+                            <img src="images/mdi_receipt-pending.svg" alt="icon">
+                            <p class="font-semibold text-[22px] leading-[38px] text-[#2382C5] ml-2">Pending Trades</p>
+                        </div>
+                        <div class="flex items-center justify-between px-3 pb-3">
+                            <button type="button" class="border border-[#DC0000] w-[137px] rounded-[7px] py-3 font-medium text-[13px] leading-[18px] text-[#DC0000] cursor-pointer"
+                                data-te-toggle="modal"
+                            data-te-target="#Refute-trade1" data-te-dropdown-item-ref>
+                                REFUTE
+                            </button>
+                            <button type="button" class="border border-[#18851E] w-[137px] rounded-[7px] py-3 font-medium text-[13px] leading-[18px] text-[#18851E] cursor-pointer"data-te-toggle="modal"
+                            data-te-target="#verify-trade1" data-te-dropdown-item-ref>
+                                VERIFY
+                            </button>
+                        </div>
+                        <div class="px-3 overflow-auto h-customh1 scrollbar-menu1">
+                            <div class="mt-3 border border-[#2382C5] rounded-[16px] py-4 px-5">
+                                <div class="flex justify-between items-center border-b border-[#2382C5] pb-3">
+                                    <div class="flex items-center">
+                                        <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#18851E]">
+                                            Run ID : 123-XX-Y
+                                        </button>
+                                        <div class="relative custom-checkbox4 flex items-center ml-3">
+                                            <input type="checkbox" id="checkbox-AN1">
+                                            <label for="checkbox-AN1"></label>
+                                        </div>
+                                    </div>
+                                    <!-- <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#343741]">
+                                        Account : QRG-Test123
+                                    </button> -->
+                                </div>
+                                <p class="mt-4 font-normal text-base text-[58595B]">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam </p>
+                            </div>
+                            <div class="mt-6 border border-[#2382C5] rounded-[16px] py-4 px-5">
+                                <div class="flex justify-between items-center border-b border-[#2382C5] pb-3">
+                                    <div class="flex items-center">
+                                        <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#18851E]">
+                                            Run ID : 123-XX-Y
+                                        </button>
+                                        <div class="relative custom-checkbox4 flex items-center ml-3">
+                                            <input type="checkbox" id="checkbox-AN2">
+                                            <label for="checkbox-AN2"></label>
+                                        </div>
+                                    </div>
+                                    <!-- <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#343741]">
+                                        Account : QRG-Test123
+                                    </button> -->
+                                </div>
+                                <p class="mt-4 font-normal text-base text-[58595B]">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam </p>
+                            </div>
+                            <div class="mt-6 border border-[#2382C5] rounded-[16px] py-4 px-5">
+                                <div class="flex justify-between items-center border-b border-[#2382C5] pb-3">
+                                    <div class="flex items-center">
+                                        <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#18851E]">
+                                            Run ID : 123-XX-Y
+                                        </button>
+                                        <div class="relative custom-checkbox4 flex items-center ml-3">
+                                            <input type="checkbox" id="checkbox-AN3">
+                                            <label for="checkbox-AN3"></label>
+                                        </div>
+                                    </div>
+                                    <!-- <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#343741]">
+                                        Account : QRG-Test123
+                                    </button> -->
+                                </div>
+                                <p class="mt-4 font-normal text-base text-[58595B]">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam </p>
+                            </div>
+                            <div class="mt-6 border border-[#2382C5] rounded-[16px] py-4 px-5">
+                                <div class="flex justify-between items-center border-b border-[#2382C5] pb-3">
+                                    <div class="flex items-center">
+                                        <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#18851E]">
+                                            Run ID : 123-XX-Y
+                                        </button>
+                                        <div class="relative custom-checkbox4 flex items-center ml-3">
+                                            <input type="checkbox" id="checkbox-AN4">
+                                            <label for="checkbox-AN4"></label>
+                                        </div>
+                                    </div>
+                                    <!-- <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#343741]">
+                                        Account : QRG-Test123
+                                    </button> -->
+                                </div>
+                                <p class="mt-4 font-normal text-base text-[58595B]">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam </p>
+                            </div>
+                            <div class="mt-6 border border-[#2382C5] rounded-[16px] py-4 px-5">
+                                <div class="flex justify-between items-center border-b border-[#2382C5] pb-3">
+                                    <div class="flex items-center">
+                                        <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#18851E]">
+                                            Run ID : 123-XX-Y
+                                        </button>
+                                        <div class="relative custom-checkbox4 flex items-center ml-3">
+                                            <input type="checkbox" id="checkbox-AN13">
+                                            <label for="checkbox-AN13"></label>
+                                        </div>
+                                    </div>
+                                    <!-- <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#343741]">
+                                        Account : QRG-Test123
+                                    </button> -->
+                                </div>
+                                <p class="mt-4 font-normal text-base text-[58595B]">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center py-3 sticky bottom-0 z-[99] bg-white">
+                        <div class=" flex items-center border border-[#C8CBDA] bg-[#F8F9FF] rounded-lg p-2">
+                            <a href="#" class="mr-5 w-8 h-8 rounded flex justify-center bg-[#919EAB]" aria-disabled="true">
+                                <img loading="lazy" decoding="async" src="images/open-bracket.svg" alt="icon">
+                            </a>
+                            <div class="">
+                                <a href="#"
+                                    class="text-sm font-normal text-[#107CC2] border border-[#2382C5] px-2 rounded-[5px] w-8 h-8 inline-flex justify-center items-center">1</a>
+                                <a href="#"
+                                    class="text-sm font-normal text-[#212B36] ml-2 px-2 border border-transparent rounded-[5px] w-8 h-8 inline-flex justify-center items-center hover:bg-[#F2F2F3]">2</a>
+                                <a href="#"
+                                    class="text-sm font-normal text-[#212B36] ml-2 px-2 border border-transparent rounded-[5px] w-8 h-8 inline-flex justify-center items-center hover:bg-[#F2F2F3]">3</a>
+                                <a href="#"
+                                    class="text-sm font-normal text-[#212B36] ml-2 px-2 border border-transparent rounded-[5px] w-8 h-8 inline-flex justify-center items-center hover:bg-[#F2F2F3]">...</a>
+                                <a href="#"
+                                    class="text-sm font-normal text-[#212B36] ml-2 px-2 border border-transparent rounded-[5px] w-8 h-8 inline-flex justify-center items-center hover:bg-[#F2F2F3]">9</a>
+                                <a href="#"
+                                    class="text-sm font-normal text-[#212B36] ml-2 px-2 border border-transparent rounded-[5px] w-8 h-8 inline-flex justify-center items-center hover:bg-[#F2F2F3]">10</a>
+                            </div>
+                            <a href="#" class=" ml-5 rounded border border-[#919EAB] w-8 h-8">
+                                <img loading="lazy" decoding="async" src="images/closed-bracket.svg" alt="icon" class="w-8 h-8"/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
+                    id="pills-contact03" role="tabpanel" aria-labelledby="pills-contact-tab03">
+                    <div class="w-full bg-[#F7F9FB] rounded-[16px] py-4 px-6 h-customh2">
+                        <div class="flex justify-center items-center">
+                            <img src="images/solar_diploma-verified-bold.svg" alt="icon">
+                            <p class="font-semibold text-[22px] leading-[38px] text-[#2382C5] ml-2">Refuted Trade</p>
+                        </div>
+                        <div class="px-3 overflow-auto h-customh1 scrollbar-menu1">
+                            <div class="mt-6 border border-[#2382C5] rounded-[16px] py-4 px-5">
+                                <div class="flex justify-between items-center border-b border-[#2382C5] pb-3">
+                                    <div class="flex items-center">
+                                        <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#18851E]">
+                                            Run ID : 123-XX-Y
+                                        </button>
+                                    </div>
+                                    <!-- <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#343741]">
+                                        Account : QRG-Test123
+                                    </button> -->
+                                </div>
+                                <p class="mt-4 font-normal text-base text-[58595B]">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam </p>
+                            </div>
+                            <div class="mt-6 border border-[#2382C5] rounded-[16px] py-4 px-5">
+                                <div class="flex justify-between items-center border-b border-[#2382C5] pb-3">
+                                    <div class="flex items-center">
+                                        <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#18851E]">
+                                            Run ID : 123-XX-Y
+                                        </button>
+                                    </div>
+                                    <!-- <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#343741]">
+                                        Account : QRG-Test123
+                                    </button> -->
+                                </div>
+                                <p class="mt-4 font-normal text-base text-[58595B]">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam </p>
+                            </div>
+                            <div class="mt-6 border border-[#2382C5] rounded-[16px] py-4 px-5">
+                                <div class="flex justify-between items-center border-b border-[#2382C5] pb-3">
+                                    <div class="flex items-center">
+                                        <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#18851E]">
+                                            Run ID : 123-XX-Y
+                                        </button>
+                                    </div>
+                                    <!-- <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#343741]">
+                                        Account : QRG-Test123
+                                    </button> -->
+                                </div>
+                                <p class="mt-4 font-normal text-base text-[58595B]">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam </p>
+                            </div>
+                            <div class="mt-6 border border-[#2382C5] rounded-[16px] py-4 px-5">
+                                <div class="flex justify-between items-center border-b border-[#2382C5] pb-3">
+                                    <div class="flex items-center">
+                                        <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#18851E]">
+                                            Run ID : 123-XX-Y
+                                        </button>
+                                    </div>
+                                    <!-- <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#343741]">
+                                        Account : QRG-Test123
+                                    </button> -->
+                                </div>
+                                <p class="mt-4 font-normal text-base text-[58595B]">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam </p>
+                            </div>
+                            <div class="mt-6 border border-[#2382C5] rounded-[16px] py-4 px-5">
+                                <div class="flex justify-between items-center border-b border-[#2382C5] pb-3">
+                                    <div class="flex items-center">
+                                        <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#18851E]">
+                                            Run ID : 123-XX-Y
+                                        </button>
+                                    </div>
+                                    <!-- <button type="button" class="w-fit rounded-[5px] border border-[#3437414D] px-3 py-[7px] font-medium text-sm text-[#343741]">
+                                        Account : QRG-Test123
+                                    </button> -->
+                                </div>
+                                <p class="mt-4 font-normal text-base text-[58595B]">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center py-3 sticky bottom-0 z-[99] bg-white">
+                        <div class=" flex items-center border border-[#C8CBDA] bg-[#F8F9FF] rounded-lg p-2">
+                            <a href="#" class="mr-5 w-8 h-8 rounded flex justify-center bg-[#919EAB]">
+                                <img loading="lazy" decoding="async" src="images/open-bracket.svg" alt="icon">
+                            </a>
+                            <div class="">
+                                <a href="#"
+                                    class="text-sm font-normal text-[#107CC2] border border-[#2382C5] px-2 rounded-[5px] w-8 h-8 inline-flex justify-center items-center">1</a>
+                                <a href="#"
+                                    class="text-sm font-normal text-[#212B36] ml-2 px-2 border border-transparent rounded-[5px] w-8 h-8 inline-flex justify-center items-center hover:bg-[#F2F2F3]">2</a>
+                                <a href="#"
+                                    class="text-sm font-normal text-[#212B36] ml-2 px-2 border border-transparent rounded-[5px] w-8 h-8 inline-flex justify-center items-center hover:bg-[#F2F2F3]">3</a>
+                                <a href="#"
+                                    class="text-sm font-normal text-[#212B36] ml-2 px-2 border border-transparent rounded-[5px] w-8 h-8 inline-flex justify-center items-center hover:bg-[#F2F2F3]">...</a>
+                                <a href="#"
+                                    class="text-sm font-normal text-[#212B36] ml-2 px-2 border border-transparent rounded-[5px] w-8 h-8 inline-flex justify-center items-center hover:bg-[#F2F2F3]">9</a>
+                                <a href="#"
+                                    class="text-sm font-normal text-[#212B36] ml-2 px-2 border border-transparent rounded-[5px] w-8 h-8 inline-flex justify-center items-center hover:bg-[#F2F2F3]">10</a>
+                            </div>
+                            <a href="#" class=" ml-5 rounded border border-[#919EAB] w-8 h-8">
+                                <img loading="lazy" decoding="async" src="images/closed-bracket.svg" alt="icon" class="w-8 h-8"/>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for VERIFY Trade -->
+    <div data-te-modal-init  class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none" id="verify-trade1" tabindex="-1" aria-labelledby="modal_activate_classTitle" aria-modal="true" role="dialog">
+        <div data-te-modal-dialog-ref class="pointer-events-none relative flex min-h-[calc(100%-1rem)] w-auto translate-y-[-50px] items-center opacity-0 transition-all duration-300 ease-in-out min-w-[474px] mx-auto max-w-[474px]">
+            <div class="pointer-events-auto flex w-full flex-col border-none bg-white bg-clip-padding text-current outline-none dark:bg-neutral-600 min-w-[474px] mx-auto max-w-[474px] p-3 relative shadow-s2 rounded-[22px]" style="background-color: #fff;">
+                <div class="flex flex-shrink-0 items-center justify-center rounded-t-md pt-1">
+                    <button type="button" class=" absolute right-3 top-3 box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+                        data-te-modal-dismiss aria-label="Close">
+                        <img loading="lazy" decoding="async" src="images/close.svg" alt="icon">
+                    </button>
+                </div>
+                <div>
+                    <div class="flex justify-center">
+                        <img src="images/verify-trade.svg" alt="icon" class="">
+                    </div>
+                </div>
+                <div class="relative py-6">
+                    <p class="font-medium text-[23px] leading-[31px] text-[#58595B] text-center">Do You want to verify the Trade?</p>
+                </div>
+                <div class="mx-auto mb-4">
+                    <button type="button" class="w-[117px] h-12 rounded-lg text-sm text-[#FFFFFF] font-semibold bg-[#18851E] cursor-pointer" data-te-modal-dismiss aria-label="Close">
+                        VERIFY
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Refute modal -->
+    <div data-te-modal-init  class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none" id="Refute-trade1" tabindex="-1" aria-labelledby="modal_activate_classTitle" aria-modal="true" role="dialog">
+        <div data-te-modal-dialog-ref class="pointer-events-none relative flex min-h-[calc(100%-1rem)] w-auto translate-y-[-50px] items-center opacity-0 transition-all duration-300 ease-in-out min-w-[474px] mx-auto max-w-[474px]">
+            <div class="pointer-events-auto flex w-full flex-col border-none bg-white bg-clip-padding text-current outline-none dark:bg-neutral-600 min-w-[474px] mx-auto max-w-[474px] p-3 relative shadow-s2 rounded-[22px]" style="background-color: #FFFFFF !important;">
+                <div class="flex flex-shrink-0 items-center justify-center rounded-t-md pt-1">
+                    <button type="button" class=" absolute right-3 top-3 box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+                        data-te-modal-dismiss aria-label="Close">
+                        <img loading="lazy" decoding="async" src="images/close.svg" alt="icon">
+                    </button>
+                </div>
+                <div>
+                    <div class="flex justify-center">
+                        <img src="images/close-red.svg" alt="icon" class="">
+                    </div>
+                </div>
+                <div class="relative py-6">
+                    <p class="font-medium text-[23px] leading-[31px] text-[#58595B] text-center">Do You want to Refute the Trade?</p>
+                </div>
+                <div class="mx-auto mb-4">
+                    <button type="button" class="w-[117px] h-12 rounded-lg text-sm text-[#FFFFFF] font-semibold bg-[#DC0000] cursor-pointer" data-te-modal-dismiss aria-label="Close">
+                        Refuted
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

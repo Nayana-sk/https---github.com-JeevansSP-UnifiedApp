@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORG Trade</title>
+    <link rel="stylesheet" href="output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script language="JavaScript" type="text/javascript" src="js/lib/custom-file.js" async></script>
+    <!-- <script language="JavaScript" type="text/javascript" src="js/lib/tw-elements/dist/js/tw-elements.umd.min.js"async></script> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="js/lib/flowbite/dist/flowbite.css">
+    <script src="js/lib/flowbite/dist/datepicker.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="output.css">
+</head>
+<body class="bg-[#FFFFFF]">
+    <div class="bg-white py-6 px-[56px] w-full flex justify-start items-center shadow-s1 sticky top-0 left-0 z-[99]">
+        <img src="images/QRG0logo.svg" alt="icon">
+    </div>
+    <div class="py-[69px] px-[56px]">
+        <div class="flex justify-between items-center">
+            <div class="relative" data-te-dropdown-ref>
+                <button
+                    class="flex items-center whitespace-nowrap bg-white border border-[#3437414D] px-5 py-3 rounded-lg text-[#2382C5] text-[26px] leading-[35px] font-normal transition duration-150 ease-in-out"
+                    type="button"
+                    id="dropdownMenuButton1"
+                    data-te-dropdown-toggle-ref
+                    aria-expanded="false"
+                    data-te-ripple-init
+                    data-te-ripple-color="light">
+                    Fixed income
+                    <span class="ml-2">
+                    <img src="images/down-arrow-blue.svg" alt="icon" class="w-7 h-7">
+                    </span>
+                </button>
+                <ul
+                    class="absolute z-[1000] w-full float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-clip-padding text-left text-base shadow-lg bg-[#FFFFFF] [&[data-te-dropdown-show]]:block"
+                    aria-labelledby="dropdownMenuButton1"
+                    data-te-dropdown-menu-ref>
+                    <li>
+                    <a
+                        class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal disabled:pointer-events-none disabled:bg-transparent text-black"
+                        href="#"
+                        data-te-dropdown-item-ref
+                        >Action</a
+                    >
+                    </li>
+                    <li>
+                    <a
+                        class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal disabled:pointer-events-none disabled:bg-transparent text-black"
+                        href="#"
+                        data-te-dropdown-item-ref
+                        >Another action</a
+                    >
+                    </li>
+                    <li>
+                    <a
+                        class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal disabled:pointer-events-none disabled:bg-transparent text-black"
+                        href="#"
+                        data-te-dropdown-item-ref
+                        >Something else here</a
+                    >
+                    </li>
+                </ul>
+            </div>
+            <div class="flex items-center">
+                <div>
+                    <img src="images/mdi_reload.svg" alt="icon" class="p-2 rounded-lg cursor-pointer bg-white border border-[#3437414D]">
+                </div>
+                <div class="relative ml-5" data-te-dropdown-ref>
+                    <button
+                        class="flex items-center whitespace-nowrap bg-white border border-[#3437414D] px-5 py-3 rounded-lg text-[#2382C5] text-[26px] leading-[35px] font-normal transition duration-150 ease-in-out"
+                        type="button"
+                        id="dropdownMenuButton1"
+                        data-te-dropdown-toggle-ref
+                        aria-expanded="false"
+                        data-te-ripple-init
+                        data-te-ripple-color="light">
+                        Runs
+                        <span class="ml-2">
+                        <img src="images/down-arrow-blue.svg" alt="icon" class="w-7 h-7">
+                        </span>
+                    </button>
+                    <ul
+                        class="absolute z-[1000] w-full float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-clip-padding text-left text-base shadow-lg bg-[#FFFFFF] [&[data-te-dropdown-show]]:block"
+                        aria-labelledby="dropdownMenuButton1"
+                        data-te-dropdown-menu-ref>
+                        <li>
+                        <a
+                            class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal disabled:pointer-events-none disabled:bg-transparent text-black"
+                            href="#"
+                            data-te-dropdown-item-ref
+                            >Action</a
+                        >
+                        </li>
+                        <li>
+                        <a
+                            class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal disabled:pointer-events-none disabled:bg-transparent text-black"
+                            href="#"
+                            data-te-dropdown-item-ref
+                            >Another action</a
+                        >
+                        </li>
+                        <li>
+                        <a
+                            class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal disabled:pointer-events-none disabled:bg-transparent text-black"
+                            href="#"
+                            data-te-dropdown-item-ref
+                            >Something else here</a
+                        >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="mt-[35px] flex justify-between items-center">
+            <div class="flex items-center">
+                <button type="button" class="border border-[#DC0000] w-[137px] rounded-[7px] py-3 font-medium text-[13px] leading-[18px] text-[#DC0000] cursor-pointer"
+                    data-te-toggle="modal"
+                data-te-target="#Refute-trade1" data-te-dropdown-item-ref>
+                    REFUTE
+                </button>
+                <button type="button" class="ml-[27px] border border-[#18851E] w-[137px] rounded-[7px] py-3 font-medium text-[13px] leading-[18px] text-[#18851E] cursor-pointer"data-te-toggle="modal"
+                data-te-target="#verify-trade1" data-te-dropdown-item-ref>
+                    VERIFY
+                </button>
+            </div>
+            <div class="flex items-center">
+                <input type="text" class="font-mediun text-[13px] text-black py-[13px] px-8 bg-white border border-[#2382C5] rounded-lg placeholder:text-[#2382C5]  plceholder:text-[13px] plceholder:font-medium w-[137px] outline-0" placeholder="Acc-10010">                
+                <div class="relative max-w-sm ml-2">
+                    <div class="absolute inset-y-0 right-[14px] flex items-center justify-end pl-3.5 pointer-events-none" aria-hidden="true">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                        </svg>
+                    </div>
+                    <input datepicker type="text" class="border border-[#2382C5] outline-0 transition-all duration-200 ease-linear p-[13.5px] font-medium text-[13px] text-[#585858] rounded-lg placeholder:text-[#585858] w-fit outline-0" placeholder="Select date">
+                </div>
+                <button type="button" class=" ml-[14px] px-8 py-[13px] bg-[#FFFFFF] rounded-lg border border-[#18851E] font-medium text-[13px] text-[#18851E]">Filter</button>
+            </div>
+        </div>
+        <div class="mt-8 overflow-auto h-[400px] sidebar">
+            <table aria-label="Outside Table" class="w-full table-auto relative h-full">
+                <thead class="sticky top-0 left-0 z-[1] border border-[#D2CECE]">
+                    <tr class="sticky top-[-1] left-0 h-[38px] w-full bg-[#F5F5F5] rounded-tl-[10px] rounded-tr-[10px] border-r border-l border-t border-[#D2CECE]">
+                        <th class="px-6 py-[18px] min-w-[100px] border-t border-b border-[#D2CECE]">
+                            <span class="flex items-center justify-center font-medium text-xs text-[#0F1419] text-center">
+                            </span>
+                        </th>
+                        <th class="px-6 py-[18px] min-w-[60px] border-t border-b border-[#D2CECE]">
+                            <span class="flex items-center font-medium text-xs text-[#0F1419] flex justify-center">Status
+                            </span>
+                        </th>
+                        <th class="px-6 py-[18px] min-w-[100px] border-t border-b border-[#D2CECE]">
+                            <span class="flex items-center font-medium text-xs text-[#0F1419] flex justify-center">Run ID
+                            </span>
+                        </th>
+                        <th class="px-6 py-[18px] min-w-[100px] border-t border-b border-[#D2CECE]">
+                            <span class="flex items-center font-medium text-xs text-[#0F1419] flex justify-center">Account
+                            </span>
+                        </th>
+                        <th class="px-6 py-[18px] min-w-[150px] border-t border-b border-[#D2CECE]">
+                            <span class="flex items-center font-medium text-xs text-[#0F1419] flex justify-center">Total Volume 
+                            </span>
+                        </th>
+                        <th class="px-6 py-[18px] min-w-[150px] border-t border-b border-[#D2CECE]">
+                            <span class="flex items-center font-medium text-xs text-[#0F1419] flex justify-center">Total Cash
+                            </span>
+                        </th>
+                        <th class="px-6 py-[18px] min-w-[150px] border-t border-b border-[#D2CECE]">
+                            <span class="flex items-center justify-center font-medium text-xs text-[#0F1419] flex justify-center">Download Excel
+                            </span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="bg-[#FFFFFF] h-[50px] border-r border-l border-[#D2CECE]">
+                        <td class="relative custom-checkbox4 flex items-center ml-6 mt-5">
+                            <input type="checkbox" id="checkbox-AN5">
+                            <label for="checkbox-AN5"></label>
+                        </td>
+                        <td class="font-mediun text-[13px] text-[#2382C5] text-center">Pending</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">123-xx-y</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">QRG-test123</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">10000</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">10000</td>
+                        <td><img src="images/material-symbols_download.svg" alt="icon" class="mx-auto cursor-pointer"></td>
+                    </tr>
+                    <tr class="border border-[#2382C54D] bg-[#2382C51A] h-[50px] border-r border-l ">
+                        <td class="relative custom-checkbox4 flex items-center ml-6 mt-5">
+                            <input type="checkbox" id="checkbox-AN6">
+                            <label for="checkbox-AN6"></label>
+                        </td>
+                        <td class="font-mediun text-[13px] text-[#18851E] text-center">Verified </td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">123-xx-y</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">QRG-test123</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">10000</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">10000</td>
+                        <td><img src="images/material-symbols_download.svg" alt="icon" class="mx-auto cursor-pointer"></td>
+                    </tr>
+                    <tr class="bg-[#FFFFFF] h-[50px] border-r border-l border-[#D2CECE]">
+                        <td class="relative custom-checkbox4 flex items-center ml-6 mt-5">
+                            <input type="checkbox" id="checkbox-AN7">
+                            <label for="checkbox-AN7"></label>
+                        </td>
+                        <td class="font-mediun text-[13px] text-[#DC0000] text-center">Refuted</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">123-xx-y</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">QRG-test123</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">10000</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">10000</td>
+                        <td><img src="images/material-symbols_download.svg" alt="icon" class="mx-auto cursor-pointer"></td>
+                    </tr>
+                    <tr class="border border-[#2382C54D] bg-[#2382C51A] h-[50px] border-r border-l ">
+                        <td class="relative custom-checkbox4 flex items-center ml-6 mt-5">
+                            <input type="checkbox" id="checkbox-AN8">
+                            <label for="checkbox-AN8"></label>
+                        </td>
+                        <td class="font-mediun text-[13px] text-[#2382C5] text-center">Pending</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">123-xx-y</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">QRG-test123</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">10000</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">10000</td>
+                        <td><img src="images/material-symbols_download.svg" alt="icon" class="mx-auto cursor-pointer"></td>
+                    </tr>
+                    <tr class="bg-[#FFFFFF] h-[50px] border-r border-l border-[#D2CECE]">
+                        <td class="relative custom-checkbox4 flex items-center ml-6 mt-5">
+                            <input type="checkbox" id="checkbox-AN9">
+                            <label for="checkbox-AN9"></label>
+                        </td>
+                        <td class="font-mediun text-[13px] text-[#2382C5] text-center">Pending</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">123-xx-y</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">QRG-test123</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">10000</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">10000</td>
+                        <td><img src="images/material-symbols_download.svg" alt="icon" class="mx-auto cursor-pointer"></td>
+                    </tr>
+                    <tr class="border border-[#2382C54D] bg-[#2382C51A] h-[50px] border-r border-l ">
+                        <td class="relative custom-checkbox4 flex items-center ml-6 mt-5">
+                            <input type="checkbox" id="checkbox-AN10">
+                            <label for="checkbox-AN10"></label>
+                        </td>
+                        <td class="font-mediun text-[13px] text-[#2382C5] text-center">Pending</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">123-xx-y</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">QRG-test123</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">10000</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">10000</td>
+                        <td><img src="images/material-symbols_download.svg" alt="icon" class="mx-auto cursor-pointer"></td>
+                    </tr>
+                    <tr class="bg-[#FFFFFF] h-[50px] border-r border-l border-[#D2CECE]">
+                        <td class="relative custom-checkbox4 flex items-center ml-6 mt-5">
+                            <input type="checkbox" id="checkbox-AN11">
+                            <label for="checkbox-AN11"></label>
+                        </td>
+                        <td class="font-mediun text-[13px] text-[#2382C5] text-center">Pending</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">123-xx-y</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">QRG-test123</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">10000</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">10000</td>
+                        <td><img src="images/material-symbols_download.svg" alt="icon" class="mx-auto cursor-pointer"></td>
+                    </tr>
+                    <tr class="border border-[#2382C54D] bg-[#2382C51A] h-[50px] border-r border-l ">
+                        <td class="relative custom-checkbox4 flex items-center ml-6 mt-5">
+                            <input type="checkbox" id="checkbox-AN12">
+                            <label for="checkbox-AN12"></label>
+                        </td>
+                        <td class="font-mediun text-[13px] text-[#2382C5] text-center">Pending</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">123-xx-y</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">QRG-test123</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">10000</td>
+                        <td class="font-mediun text-[13px] text-[#6B6E71] text-center">10000</td>
+                        <td><img src="images/material-symbols_download.svg" alt="icon" class="mx-auto cursor-pointer"></td>
+                    </tr>
+                    <tr class="bg-[#FFFFFF] h-[50px] border-r border-l border-b border-[#D2CECE]"></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="flex items-center justify-center py-3 sticky bottom-0 z-[99] bg-white mt-[62px]">
+            <div class=" flex items-center  p-2">
+                <a href="#" class="mr-5 w-8 h-8 rounded flex justify-center bg-[#919EAB]">
+                    <img loading="lazy" decoding="async" src="images/open-bracket.svg" alt="icon">
+                </a>
+                <div class="">
+                    <a href="#"
+                        class="text-sm font-bold text-[#2382C5] border border-[#2382C5] px-2 rounded-[5px] w-8 h-8 inline-flex justify-center items-center">1</a>
+                    <a href="#"
+                        class="text-sm font-bold text-[#212B36] ml-2 px-2 border border-[#DFE3E8] rounded-[5px] w-8 h-8 inline-flex justify-center items-center hover:bg-[#F2F2F3]">2</a>
+                    <a href="#"
+                        class="text-sm font-bold text-[#212B36] ml-2 px-2 border border-[#DFE3E8] rounded-[5px] w-8 h-8 inline-flex justify-center items-center hover:bg-[#F2F2F3]">3</a>
+                    <a href="#"
+                        class="text-sm font-bold text-[#212B36] ml-2 px-2 border border-[#DFE3E8] rounded-[5px] w-8 h-8 inline-flex justify-center items-center hover:bg-[#F2F2F3]">...</a>
+                    <a href="#"
+                        class="text-sm font-bold text-[#212B36] ml-2 px-2 border border-[#DFE3E8] rounded-[5px] w-8 h-8 inline-flex justify-center items-center hover:bg-[#F2F2F3]">9</a>
+                    <a href="#"
+                        class="text-sm font-bold text-[#212B36] ml-2 px-2 border border-[#DFE3E8] rounded-[5px] w-8 h-8 inline-flex justify-center items-center hover:bg-[#F2F2F3]">10</a>
+                </div>
+                <a href="#" class=" ml-5 rounded border border-[#919EAB] w-8 h-8">
+                    <img loading="lazy" decoding="async" src="images/closed-bracket.svg" alt="icon" class="w-8 h-8"/>
+                </a>
+            </div>
+        </div>
+    </div>
+     <!-- Modal for VERIFY Trade -->
+     <div data-te-modal-init  class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none" id="verify-trade1" tabindex="-1" aria-labelledby="modal_activate_classTitle" aria-modal="true" role="dialog">
+        <div data-te-modal-dialog-ref class="pointer-events-none relative flex min-h-[calc(100%-1rem)] w-auto translate-y-[-50px] items-center opacity-0 transition-all duration-300 ease-in-out min-w-[474px] mx-auto max-w-[474px]">
+            <div class="pointer-events-auto flex w-full flex-col border-none bg-white bg-clip-padding text-current outline-none dark:bg-neutral-600 min-w-[474px] mx-auto max-w-[474px] p-3 relative shadow-s2 rounded-[22px]" style="background-color: #fff;">
+                <div class="flex flex-shrink-0 items-center justify-center rounded-t-md pt-1">
+                    <button type="button" class=" absolute right-3 top-3 box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+                        data-te-modal-dismiss aria-label="Close">
+                        <img loading="lazy" decoding="async" src="images/close.svg" alt="icon">
+                    </button>
+                </div>
+                <div>
+                    <div class="flex justify-center">
+                        <img src="images/verify-trade.svg" alt="icon" class="">
+                    </div>
+                </div>
+                <div class="relative py-6">
+                    <p class="font-medium text-[23px] leading-[31px] text-[#58595B] text-center">Do You want to verify the Trade?</p>
+                </div>
+                <div class="mx-auto mb-4">
+                    <button type="button" class="w-[117px] h-12 rounded-lg text-sm text-[#FFFFFF] font-semibold bg-[#18851E] cursor-pointer" data-te-modal-dismiss aria-label="Close">
+                        VERIFY
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Refute modal -->
+    <div data-te-modal-init  class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none" id="Refute-trade1" tabindex="-1" aria-labelledby="modal_activate_classTitle" aria-modal="true" role="dialog">
+        <div data-te-modal-dialog-ref class="pointer-events-none relative flex min-h-[calc(100%-1rem)] w-auto translate-y-[-50px] items-center opacity-0 transition-all duration-300 ease-in-out min-w-[474px] mx-auto max-w-[474px]">
+            <div class="pointer-events-auto flex w-full flex-col border-none bg-white bg-clip-padding text-current outline-none dark:bg-neutral-600 min-w-[474px] mx-auto max-w-[474px] p-3 relative shadow-s2 rounded-[22px]" style="background-color: #FFFFFF !important;">
+                <div class="flex flex-shrink-0 items-center justify-center rounded-t-md pt-1">
+                    <button type="button" class=" absolute right-3 top-3 box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+                        data-te-modal-dismiss aria-label="Close">
+                        <img loading="lazy" decoding="async" src="images/close.svg" alt="icon">
+                    </button>
+                </div>
+                <div>
+                    <div class="flex justify-center">
+                        <img src="images/close-red.svg" alt="icon" class="">
+                    </div>
+                </div>
+                <div class="relative py-6">
+                    <p class="font-medium text-[23px] leading-[31px] text-[#58595B] text-center">Do You want to Refute the Trade?</p>
+                </div>
+                <div class="mx-auto mb-4">
+                    <button type="button" class="w-[117px] h-12 rounded-lg text-sm text-[#FFFFFF] font-semibold bg-[#DC0000] cursor-pointer" data-te-modal-dismiss aria-label="Close">
+                        Refuted
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

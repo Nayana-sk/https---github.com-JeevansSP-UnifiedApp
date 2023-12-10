@@ -1,0 +1,380 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QRG Trade Authorize Screen</title>
+    <link rel="stylesheet" href="output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script language="JavaScript" type="text/javascript" src="js/lib/custom-file.js" async></script>
+    <script language="JavaScript" type="text/javascript" src="js/lib/tw-elements/dist/js/tw-elements.umd.min.js"async></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" /> -->
+</head>
+<style>
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+    .container{
+        max-width: 1280px;
+        margin: auto;
+    }
+body {
+font-family: 'Font1', Rubik;
+}
+/* arabic */
+@font-face {
+font-family: 'Rubik';
+font-style: normal;
+font-weight: 300;
+font-display: swap;
+src: url(/public/Fonts/Rubik/static/Rubik-Light.ttf)
+}
+@font-face {
+font-family: 'Rubik';
+font-style: normal;
+font-weight: 400;
+font-display: swap;
+src: url(/public/Fonts/Rubik/static/Rubik-Regular.ttf)
+}
+
+@font-face {
+font-family: 'Rubik';
+font-style: normal;
+font-weight: 500;
+font-display: swap;
+src: url(/public/Fonts/Rubik/static/Rubik-Medium.ttf)  
+}
+@font-face {
+font-family: 'Rubik';
+font-style: normal;
+font-weight: 600;
+font-display: swap;
+src: url(/public/Fonts/Rubik/static/Rubik-SemiBold.ttf)  
+}
+@font-face {
+font-family: 'Rubik';
+font-style: normal;
+font-weight: 700;
+font-display: swap;
+src: url(/public/Fonts/Rubik/static/Rubik-Bold.ttf) 
+}
+@font-face {
+font-family: 'Rubik';
+font-style: normal;
+font-weight: 800;
+font-display: swap;
+src: url(/public/Fonts/Rubik/static/Rubik-ExtraBold.ttf)
+}
+ /* scrollbar */
+ .scrollbar-menu1::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+.scrollbar-menu1::-webkit-scrollbar:vertical{
+  width: 5px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px !important;
+}
+.scrollbar-menu1::-webkit-scrollbar:horizontal {
+  height: 8px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px !important;
+}
+.scrollbar-menu1::-webkit-scrollbar-thumb {
+  background-color: #DAD7D9;
+  border: 1px solid #DAD7D9;
+  border-radius: 22px;
+  height: 5px;
+}
+  /* checkbox */
+  .custom-checkbox4 input{
+    opacity: 0;
+}
+.custom-checkbox4 input[type="checkbox"]:checked ~ label::before {
+    color: #191919;
+    background-color: #107CC2;
+    border-color: #107CC2;
+    border-radius: 4px;
+}
+.custom-checkbox4 label::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 0;
+    margin: 0;
+    height: 21px;
+    width: 21px;
+    transition: transform 0.28s ease;
+    border: 1px solid #9B9B9B;
+    border-radius: 4px;
+    transform: translateY(-50%);
+}
+.custom-checkbox4 input[type="checkbox"]:checked ~ label::after {
+    transform: rotate(-45deg) scale(1);
+    background-color: transparent;
+    border-color: white;
+}
+.custom-checkbox4 label::after {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 7px;
+    border-bottom: 2px solid #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+    transform: rotate(-45deg) scale(0);
+    transition: transform ease 0.25s;
+    will-change: transform;
+    position: absolute;
+    top: 0px;
+    left: 4.5px;
+}
+</style>
+<body>
+    <div class="bg-white py-10 px-[54px]">
+        <p class="bg-[#E0F3FB] py-5 text-center font-normal text-[48px] leading-[53px] text-black">QRG Trade Authorize-r</p>
+        <div class="flex justify-between items-center mt-7">
+            <div>
+                <div class="relative" data-te-dropdown-ref>
+                    <button
+                      class="flex items-center whitespace-nowrap rounded bg-[#E0F3FB] px-6 pb-2 pt-3 text-[28px] leading-[35px] font-normal transition duration-150 ease-in-out"
+                      type="button"
+                      id="dropdownMenuButton1"
+                      data-te-dropdown-toggle-ref
+                      aria-expanded="false"
+                      data-te-ripple-init
+                      data-te-ripple-color="light">
+                      Fixed income
+                      <span class="ml-10">
+                        <img src="images/down-arrow.svg" alt="icon" class="w-6 h-6">
+                      </span>
+                    </button>
+                    <ul
+                      class="absolute z-[1000] w-full float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-clip-padding text-left text-base shadow-lg bg-[#FFFFFF] [&[data-te-dropdown-show]]:block"
+                      aria-labelledby="dropdownMenuButton1"
+                      data-te-dropdown-menu-ref>
+                      <li>
+                        <a
+                          class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal disabled:pointer-events-none disabled:bg-transparent text-black"
+                          href="#"
+                          data-te-dropdown-item-ref
+                          >Action</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal disabled:pointer-events-none disabled:bg-transparent text-black"
+                          href="#"
+                          data-te-dropdown-item-ref
+                          >Another action</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal disabled:pointer-events-none disabled:bg-transparent text-black"
+                          href="#"
+                          data-te-dropdown-item-ref
+                          >Something else here</a
+                        >
+                      </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex items-center">
+                <div>
+                    <img src="images/refresh.png" alt="icon" class="p-1 rounded cursor-pointer w-12 h-12 bg-[#E0F3FB]">
+                </div>
+                <div class="relative ml-10" data-te-dropdown-ref>
+                    <button
+                      class="flex items-center whitespace-nowrap rounded bg-[#E0F3FB] px-6 pb-2 pt-3 text-[28px] leading-[35px] font-normal transition duration-150 ease-in-out"
+                      type="button"
+                      id="dropdownMenuButton1"
+                      data-te-dropdown-toggle-ref
+                      aria-expanded="false"
+                      data-te-ripple-init
+                      data-te-ripple-color="light">
+                      Runs
+                      <span class="ml-10">
+                        <img src="images/down-arrow.svg" alt="icon" class="w-6 h-6">
+                      </span>
+                    </button>
+                    <ul
+                      class="absolute z-[1000] w-full float-left m-0 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-clip-padding text-left text-base shadow-lg bg-[#FFFFFF] [&[data-te-dropdown-show]]:block"
+                      aria-labelledby="dropdownMenuButton1"
+                      data-te-dropdown-menu-ref>
+                      <li>
+                        <a
+                          class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal disabled:pointer-events-none disabled:bg-transparent text-black"
+                          href="#"
+                          data-te-dropdown-item-ref
+                          >Action</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal disabled:pointer-events-none disabled:bg-transparent text-black"
+                          href="#"
+                          data-te-dropdown-item-ref
+                          >Another action</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          class="block w-full whitespace-nowrap bg-transparent px-4 py-2 text-sm font-normal disabled:pointer-events-none disabled:bg-transparent text-black"
+                          href="#"
+                          data-te-dropdown-item-ref
+                          >Something else here</a
+                        >
+                      </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-between mt-7 items-center">
+            <div class="flex items-center mt-[52px]">
+                <button type="button" class="bg-[#E0F3FB] border border-[#000000] w-fit px-[56px] rounded- py-2 font-normal text-xl text-[#000000] cursor-pointer"
+                    data-te-toggle="modal"
+                data-te-target="#Refute-trade1" data-te-dropdown-item-ref>
+                    REFUTE
+                </button>
+                <button type="button" class=" ml-9 bg-[#E0F3FB] border border-[#000000] w-fit px-[56px] rounded- py-2 font-normal text-xl text-[#000000] cursor-pointer cursor-pointer"data-te-toggle="modal"
+                data-te-target="#verify-trade1" data-te-dropdown-item-ref>
+                    VERIFY
+                </button>
+            </div>
+            <div>
+                <input type="text" class="font-normal text-xl text-black py-[18px] px-5 bg-[#BCCBFF] border border-black rounded placeholder:text-black w-fit outline-0" placeholder="Acc-10010">
+                <input type="text" class="ml-4 py-4 px-6 bg-[#DDECEF] font-normal text-xl text-black border border-black rounded placeholder:text-black w-fit outline-0" placeholder="2023-09-15">
+                <button type="button" class=" ml-2 px-2.5 py-[6px] bg-[#CCEEFD] font-normal text-xl text-black">Filter</button>
+            </div>
+        </div>
+        <div class="mt-5">
+            <div class="overflow-auto pr-2 scroll-bar">
+                <table aria-label="Outside Table" class="w-full table-auto">
+                    <thead>
+                        <tr class="h-[51px] w-full bg-[#E0F3FB] rounded border border-[#000000] sticky top-0 left-0">
+                            <th class="px-6 py-[18px] min-w-[50px]">
+                                <span class="">
+                                </span>
+                            </th>
+                            <th class="px-6 py-[18px] min-w-[100px]">
+                                <span class="flex items-center font-normal text-xl text-[#000000] flex justify-center">Status
+                                </span>
+                            </th>
+                            <th class="px-6 py-[18px] min-w-[100px]">
+                                <span class="flex items-center font-normal text-xl text-[#000000] flex justify-center">Run ID 
+                                </span>
+                            </th>
+                            <th class="px-6 py-[18px] min-w-[100px]">
+                                <span class="flex items-center font-normal text-xl text-[#000000] flex justify-center">Account
+                                </span>
+                            </th>
+                            <th class="px-6 py-[18px] min-w-[150px]">
+                                <span class="flex items-center font-normal text-xl text-[#000000] flex justify-center">Total Volume
+                                </span>
+                            </th>
+                            <th class="px-6 py-[18px] min-w-[150px]">
+                                <span class="flex items-center font-normal text-xl text-[#000000] flex justify-center">Total cash
+                                </span>
+                            </th>
+                            <th class="px-6 py-[18px] min-w-[150px]">
+                                <span class="flex items-center justify-center font-normal text-xl text-[#000000] flex justify-center">Download excel
+                                </span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="h-5"></tr>
+                        <tr class="border border-black h-[51px]">
+                            <td class="relative custom-checkbox4 flex items-center ml-3 mt-5">
+                                <input type="checkbox" id="checkbox-AN5">
+                                <label for="checkbox-AN5"></label>
+                            </td>
+                            <td class="font-normal text-xl text-[#3585E3] text-center">Pending</td>
+                            <td class="font-normal text-xl text-[#000000] text-center">123-xx-y</td>
+                            <td class="font-normal text-xl text-[#000000] text-center">QRG-test123</td>
+                            <td class="font-normal text-xl text-[#000000] text-center">10000</td>
+                            <td class="font-normal text-xl text-[#000000] text-center">10000</td>
+                            <td><img src="images/download.svg" alt="icon" class="mx-auto cursor-pointer"></td>
+                        </tr>
+                        <tr class="h-5"></tr>
+                        <tr class="border border-black h-[51px]">
+                            <td ></td>
+                            <td class="font-normal text-xl text-[#00EE51] text-center">Verified</td>
+                            <td class="font-normal text-xl text-[#000000] text-center">123-xx-y</td>
+                            <td class="font-normal text-xl text-[#000000] text-center">QRG-test123</td>
+                            <td class="font-normal text-xl text-[#000000] text-center">10000</td>
+                            <td class="font-normal text-xl text-[#000000] text-center">10000</td>
+                            <td><img src="images/download.svg" alt="icon" class="mx-auto"></td>
+                        </tr>
+                        <tr class="h-5"></tr>
+                        <tr class="border border-black h-[51px]">
+                            <td></td>
+                            <td class="font-normal text-xl text-[#D60A0A] text-center">Refuted</td>
+                            <td class="font-normal text-xl text-[#000000] text-center">123-xx-y</td>
+                            <td class="font-normal text-xl text-[#000000] text-center">QRG-test123</td>
+                            <td class="font-normal text-xl text-[#000000] text-center">10000</td>
+                            <td class="font-normal text-xl text-[#000000] text-center">10000</td>
+                            <td><img src="images/download.svg" alt="icon" class="mx-auto"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+     <!-- Modal for VERIFY Trade -->
+     <div data-te-modal-init  class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none" id="verify-trade1" tabindex="-1" aria-labelledby="modal_activate_classTitle" aria-modal="true" role="dialog">
+        <div data-te-modal-dialog-ref class="pointer-events-none relative flex min-h-[calc(100%-1rem)] w-auto translate-y-[-50px] items-center opacity-0 transition-all duration-300 ease-in-out min-w-[474px] mx-auto max-w-[474px]">
+            <div class="pointer-events-auto flex w-full flex-col border-none bg-white bg-clip-padding text-current outline-none dark:bg-neutral-600 min-w-[474px] mx-auto max-w-[474px] p-3 relative shadow-s2 rounded-[22px]" style="background-color: #fff;">
+                <div class="flex flex-shrink-0 items-center justify-center rounded-t-md pt-1">
+                    <button type="button" class=" absolute right-3 top-3 box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+                        data-te-modal-dismiss aria-label="Close">
+                        <img loading="lazy" decoding="async" src="images/close.svg" alt="icon">
+                    </button>
+                </div>
+                <div>
+                    <div class="flex justify-center">
+                        <img src="images/verify-trade.svg" alt="icon" class="">
+                    </div>
+                </div>
+                <div class="relative py-6">
+                    <p class="font-medium text-[23px] leading-[31px] text-[#58595B] text-center">Do You want to verify the Trade?</p>
+                </div>
+                <div class="mx-auto mb-4">
+                    <button type="button" class="w-[117px] h-12 rounded-lg text-sm text-[#FFFFFF] font-semibold bg-[#18851E] cursor-pointer" data-te-modal-dismiss aria-label="Close">
+                        VERIFY
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Refute modal -->
+    <div data-te-modal-init  class="fixed left-0 top-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none" id="Refute-trade1" tabindex="-1" aria-labelledby="modal_activate_classTitle" aria-modal="true" role="dialog">
+        <div data-te-modal-dialog-ref class="pointer-events-none relative flex min-h-[calc(100%-1rem)] w-auto translate-y-[-50px] items-center opacity-0 transition-all duration-300 ease-in-out min-w-[474px] mx-auto max-w-[474px]">
+            <div class="pointer-events-auto flex w-full flex-col border-none bg-white bg-clip-padding text-current outline-none dark:bg-neutral-600 min-w-[474px] mx-auto max-w-[474px] p-3 relative shadow-s2 rounded-[22px]" style="background-color: #FFFFFF !important;">
+                <div class="flex flex-shrink-0 items-center justify-center rounded-t-md pt-1">
+                    <button type="button" class=" absolute right-3 top-3 box-content rounded-none border-none hover:no-underline hover:opacity-75 focus:opacity-100 focus:shadow-none focus:outline-none"
+                        data-te-modal-dismiss aria-label="Close">
+                        <img loading="lazy" decoding="async" src="images/close.svg" alt="icon">
+                    </button>
+                </div>
+                <div>
+                    <div class="flex justify-center">
+                        <img src="images/close-red.svg" alt="icon" class="">
+                    </div>
+                </div>
+                <div class="relative py-6">
+                    <p class="font-medium text-[23px] leading-[31px] text-[#58595B] text-center">Do You want to Refute the Trade?</p>
+                </div>
+                <div class="mx-auto mb-4">
+                    <button type="button" class="w-[117px] h-12 rounded-lg text-sm text-[#FFFFFF] font-semibold bg-[#DC0000] cursor-pointer" data-te-modal-dismiss aria-label="Close">
+                        Refuted
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
